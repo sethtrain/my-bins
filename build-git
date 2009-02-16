@@ -1,0 +1,6 @@
+#!/bin/sh
+# port install gettext
+
+./configure \
+    --prefix=/usr/local/pkgs/git
+

@@ -1,0 +1,14 @@
+#!/bin/sh
+# port install jpeg libpng xpm
+ 
+CPPFLAGS=-I/opt/local/include; export CPPFLAGS
+LDFLAGS=-L/opt/local/lib; export LDFLAGS
+ 
+./configure \
+    --prefix=/usr/local/pkgs/emacs \
+    --with-ns \
+    --without-x \
+    --with-jpeg \
+    --with-xpm \
+    --with-png
+ 
