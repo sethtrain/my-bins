@@ -21,7 +21,7 @@ if [ -d $HERE/src ]; then
   CLASSPATH=$CLASSPATH:src
 fi
 
-CLASSPATH=$CLASSPATH$JARS
+CLASSPATH=$CLASSPATH:$JARS
 
 if [ -z "$1" ]; then
     $RLWRAP --remember -c -b $BREAK_CHARS -f $HOME/.clj_completions \
