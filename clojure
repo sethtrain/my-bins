@@ -1,5 +1,5 @@
 #!/bin/sh
-export SRC=/Users/seth/src
+export SRC=~/src
 export CLOJURE_DIR=$SRC/clojure
 export CLASSPATH=$CLASSPATH:$CLOJURE_DIR/clojure-contrib/clojure-contrib.jar:$CLOJURE_DIR/trunk/clojure.jar
 export JARS=$SRC/jars
