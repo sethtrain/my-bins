@@ -3,6 +3,7 @@ export SRC=~/src
 export CLOJURE_DIR=$SRC/clojure
 export CLASSPATH=$CLASSPATH:$CLOJURE_DIR/clojure-contrib/clojure-contrib.jar:$CLOJURE_DIR/trunk/clojure.jar
 export JARS=$SRC/jars
+export RLWRAP=`which rlwrap`
 export HERE=`pwd`
 
 for file in $JARS/*.jar; do
@@ -22,7 +23,7 @@ fi
 CLASSPATH=$CLASSPATH:$JARS
 
 if [ -z "$1" ]; then
-    rlwrap java -cp $CLASSPATH clojure.main
+    $RLWRAP java -cp $CLASSPATH clojure.main
 else
     java -cp $CLASSPATH clojure.main $1    
 fi
