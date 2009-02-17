@@ -4,8 +4,6 @@ export CLOJURE_DIR=$SRC/clojure
 export CLASSPATH=$CLASSPATH:$CLOJURE_DIR/clojure-contrib/clojure-contrib.jar:$CLOJURE_DIR/trunk/clojure.jar
 export JARS=$SRC/jars
 export HERE=`pwd`
-export RLWRAP=`which rlwrap`
-BREAK_CHARS="(){}[],^%$#@\"\";:''|\\"
 
 for file in $JARS/*.jar; do
     JARS=$JARS:$file
@@ -24,8 +22,7 @@ fi
 CLASSPATH=$CLASSPATH:$JARS
 
 if [ -z "$1" ]; then
-    $RLWRAP --remember -c -b $BREAK_CHARS -f $HOME/.clj_completions \
-    java -cp $CLASSPATH clojure.main
+    rlwrap java -cp $CLASSPATH clojure.main
 else
     java -cp $CLASSPATH clojure.main $1    
 fi
