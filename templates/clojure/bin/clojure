@@ -1,0 +1,15 @@
+#!/bin/sh
+export HERE=`pwd`
+
+for file in $HERE/lib/*.jar; do
+    JARS=$JARS:$file
+done   
+
+JARS=$JARS:src:test
+
+if [ -z "$1" ]; then
+    java -cp $JARS clojure.main
+else
+    java -cp $JARS clojure.main $1
+fi
+

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+export TEMPLATE_DIR="$HOME/bin/templates"
+export HERE=`pwd`
+export TEMPLATE_NAME=$1
+export PROJ_NAME=$2
+
+if [ $# -ne 2 ]; then
+    echo "Usage $0 <template name> <project name>"
+    exit 2
+fi
+
+if [ -d $HERE/$PROJ_NAME ]; then
+    echo "Project folder $PROJ_NAME already exists."
+    exit 2
+fi
+
+if [ ! -d $TEMPLATE_DIR/$TEMPLATE_NAME ]; then
+    echo "Template $TEMPLATE_NAME does not exists."
+    exit 2
+fi
+
+cp -R $TEMPLATE_DIR/$TEMPLATE_NAME $PROJ_NAME
+cd $PROJ_NAME
+
+find . -name '$TEMPLATE_NAME*' -print0 | xargs -0 perl -pi -e 's/$TEMPLATE_NAME/$PROJ_NAME/g'
