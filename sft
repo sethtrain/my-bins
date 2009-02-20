@@ -22,5 +22,3 @@ fi
 
 cp -R $TEMPLATE_DIR/$TEMPLATE_NAME $PROJ_NAME
 cd $PROJ_NAME
-
-find . -name '$TEMPLATE_NAME*' -print0 | xargs -0 perl -pi -e 's/$TEMPLATE_NAME/$PROJ_NAME/g'
