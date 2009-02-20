@@ -20,11 +20,15 @@ if [ -d $HERE/src ]; then
   CLASSPATH=$CLASSPATH:src
 fi
 
+if [ -d $HERE/test ]; then
+  CLASSPATH=$CLASSPATH:test
+fi
+
 CLASSPATH=$CLASSPATH:$JARS
 
 if [ -z "$1" ]; then
     $RLWRAP java -cp $CLASSPATH clojure.main
 else
-    java -cp $CLASSPATH clojure.main $1    
+    java -cp $CLASSPATH clojure.main $1
 fi
 
