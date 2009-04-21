@@ -1,0 +1,5 @@
+#!/bin/sh
+# sudo port install spidermonkey
+
+./configure \
+    --prefix=/usr/local/pkgs/couchdb
