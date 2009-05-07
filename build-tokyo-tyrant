@@ -1,2 +1,3 @@
 ./configure \
-    --prefix=/usr/local/pkgs/tokyo-tyrant
+    --prefix=/usr/local/pkgs/tokyo-tyrant \
+    --with-tc=/usr/local/pkgs/tokyo-cabinet
