@@ -24,7 +24,7 @@ if [ -d $HERE/test ]; then
   CLASSPATH=$CLASSPATH:test
 fi
 
-CLASSPATH=$CLASSPATH:$JARS
+CLASSPATH=$CLASSPATH:$JARS:~/.emacs.d/clojure/swank-clojure
 
 if [ -z "$1" ]; then
     $RLWRAP java -cp $CLASSPATH clojure.main
