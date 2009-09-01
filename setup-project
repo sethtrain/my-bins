@@ -1,0 +1,5 @@
+name=$1
+server=$2
+
+pip install -E ${name} -e git+ssh://git@${server}/${name}.git#egg=${name}
+pip install -E ${name} -r ${name}/src/${name}/requirements.txt
