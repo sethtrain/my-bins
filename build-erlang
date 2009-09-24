@@ -1,0 +1,5 @@
+./configure \
+	--prefix=/usr/local/pkgs/erlang \
+	--enable-hipe \
+	--enable-smp-support \
+	--enable-threads
