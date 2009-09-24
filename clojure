@@ -24,6 +24,12 @@ if [ -d $HERE/test ]; then
   CLASSPATH=$CLASSPATH:test
 fi
 
+if [ -d $HERE/deps ]; then
+    for file in $HERE/deps/*; do
+        JARS=$JARS:$file
+    done   
+fi
+
 CLASSPATH=$CLASSPATH:$JARS:~/.emacs.d/clojure/swank-clojure
 
 if [ -z "$1" ]; then
@@ -31,4 +37,3 @@ if [ -z "$1" ]; then
 else
     java -cp $CLASSPATH clojure.main $1
 fi
-
